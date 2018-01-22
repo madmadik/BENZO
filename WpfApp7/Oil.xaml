@@ -1,0 +1,25 @@
+﻿<Page x:Class="WpfApp7.Oil"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp7"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="Oil">
+
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
+        <CheckBox Name="Ai80_Check" Content="АИ-80" HorizontalAlignment="Left" Margin="47,90,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.521,1.188"/>
+        <CheckBox Name="Ai92_Check" Content="АИ-92" HorizontalAlignment="Left" Margin="47,139,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="Ai95_Check" Content="АИ-95" HorizontalAlignment="Left" Margin="47,190,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="102,37,0,0" TextWrapping="Wrap" Text="Выберите марку бензина" VerticalAlignment="Top" Width="110"/>
+        <Slider HorizontalAlignment="Left"  IsSnapToTickEnabled="true" Name="Ai80" Margin="158,90,0,0"   VerticalAlignment="Top" RenderTransformOrigin="1.378,-0.213" Width="119"/>
+        <Slider HorizontalAlignment="Left"  IsSnapToTickEnabled="true" Name="Ai92" Margin="158,139,0,0"  VerticalAlignment="Top" RenderTransformOrigin="-0.494,-0.481" Width="119"/>
+        <Slider HorizontalAlignment="Left"  IsSnapToTickEnabled="true" Name="Ai95" Margin="158,187,0,0"  VerticalAlignment="Top" RenderTransformOrigin="0.603,0.039" Width="119"/>
+        <TextBox HorizontalAlignment="Left" Name="text1"  Height="18" Margin="128,90,0,0" TextWrapping="Wrap" IsEnabled="{Binding ElementName=Ai80_Check,Path=IsChecked}" Text="{Binding ElementName=Ai80,Path=Value}" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.202,0.362"/>
+        <TextBox HorizontalAlignment="Left" Name="text2" Height="18" Margin="128,187,0,0" TextWrapping="Wrap" IsEnabled="{Binding ElementName=Ai95_Check,Path=IsChecked}" Text="{Binding ElementName=Ai95,Path=Value}"  VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.202,0.362"/>
+        <TextBox HorizontalAlignment="Left" Name="text3" Height="18" Margin="128,139,0,0" TextWrapping="Wrap" IsEnabled="{Binding ElementName=Ai92_Check,Path=IsChecked}" Text="{Binding ElementName=Ai92,Path=Value}" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.202,0.362"/>
+        <Button Content="Оформить заказ" Click="Button_Order" HorizontalAlignment="Left" Margin="181,242,0,0" VerticalAlignment="Top" Width="96"/>
+       
+    </Grid>
+</Page>
